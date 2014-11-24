@@ -2,6 +2,7 @@
 (function(){
 	var profile = document.getElementById("profile_container");
 	profile.hidden = true;
+	setPost();
 })();
 
 /* do logout */
@@ -29,6 +30,7 @@ function showProfile() {
 	feed.hidden = true;
 }
 
+/* create a new text or url feed post */
 function createPost() {
 	
 	var post = document.getElementsByName("newpost")[0];
@@ -46,6 +48,22 @@ function createPost() {
 	setPost();
 }
 
+/* create the list of all the posts */
+function setPost() {
+	
+	var list = document.getElementById("post_list");
+	var fragment = document.createDocumentFragment();
+	var feeds = FeedService.feedStore;
+	for(var i = 0, length = feeds.length; i < length; i ++ ) {
+		var element = document.createElement("div");
+		element.appendChild(document.createTextNode( feeds[i].getFeed() ));
+		fragment.appendChild(element);
+	}
+	list.innerHTML = "";
+	list.appendChild(fragment);
+}
+
+/* validation to check whether the post is empty or not */
 function validatePost(post) {
 	
 	if(post.length == 0) {
