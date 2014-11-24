@@ -2,20 +2,24 @@
 <html>
 	<head>
 		<title>My Book</title>
+		<link href="css/index.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<div>
 			<div>
-				<form>
-					<h1>My Book</h1>
-					<input placeholder="User name"/>
-					<input type="password" placeholder="Password"/>
-					<button type="Submit">Sign in</button>
+				<form name="login_form" action="html/feeds.html" onsubmit="return validateLogin()" method="post">
+					<h1 id="title_index">My Book</h1>
+					<div id="credentials_container"> 
+						<input  name="username" maxlength="8" placeholder="User name"/>
+						<input  name="password" type="password" min="6" placeholder="Password"/>
+						<button type="submit">Sign in</button>
+					</div>
 				</form>
 			</div>
 			<div>
-				<img width="987" height="615" src="images/fullsize/index-bg.jpg"/>
+				<img id="index-bg" width="987" height="615" src="images/fullsize/index-bg.jpg"/>
 			</div>
 		</div>
+		<script src="javascript/index.js"></script>
 	</body>
 </html>
