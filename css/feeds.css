@@ -1,6 +1,33 @@
-#feed_menu {
-	
-	width: 5%;
-	height: 100%;
-	float: left;
+#header {
+    padding:5px;
+	text-align: left;
+}
+
+#header button {
+	float: right;
+}
+
+#menu {
+	line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:"20%";
+    float:left;
+    padding:5px;
+}
+
+#container {
+	width: "100%";
+}
+
+#content {
+	width:"80%";
+    float:left;
+    padding:10px;
+}
+
+#footer {
+	clear:both;
+	padding:5px;
+	text-align:center;
 }

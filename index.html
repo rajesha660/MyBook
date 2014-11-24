@@ -6,18 +6,19 @@
 	</head>
 	<body>
 		<div>
-			<div>
+			<div id="header">
 				<form name="login_form" action="html/feeds.html" onsubmit="return validateLogin()" method="post">
-					<h1 id="title_index">My Book</h1>
-					<div id="credentials_container"> 
-						<input  name="username" maxlength="8" placeholder="User name"/>
-						<input  name="password" type="password" min="6" placeholder="Password"/>
-						<button type="submit">Sign in</button>
-					</div>
+					<span id="title_index">My Book</span>
+					<input  name="username" maxlength="8" placeholder="User name"/>
+					<input  name="password" type="password" min="6" placeholder="Password"/>
+					<button type="submit">Sign in</button>
 				</form>
 			</div>
-			<div>
+			<div id="content">
 				<img id="index-bg" width="987" height="615" src="images/fullsize/index-bg.jpg"/>
+			</div>
+			<div id="footer">
+				<span>Talent improving exercise, OFS</span>
 			</div>
 		</div>
 		<script src="javascript/index.js"></script>

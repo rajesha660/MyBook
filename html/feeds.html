@@ -6,20 +6,28 @@
 	</head>
 	<body>
 		<div>
-			<div>
-				<h4>My Book</h4>
-				<button>Sign out</button>
+			<div id="header">
+				<h1 id="title">My Book</h1>
+				<button id="signout_btn" onClick="logout()">Sign out</button>
 			</div>
-			<div id="feed_container">
-				<div id="feed_menu">
-					<button>Feed</button>
-					<button>Profile</button>
+			<div id="container">
+				<div id="menu">
+					<button onClick="showFeed()">Feed</button></br>
+					<button onClick="showProfile()">Profile</button></br>
 				</div>
-				<div id=feed_content>
-					<div>feed</div>
-					<div>profile</div>
+				<div id="content">
+					<div id="feed_container">
+						feed
+					</div>
+					<div id="profile_container">
+						<iframe src="profile.html"></iframe>
+					</div>
 				</div>
+			</div>
+			<div id="footer">
+				Talent improving exercise, OFS
 			</div>
 		</div>
+		<script src="../javascript/feeds.js"></script>
 	</body>
 </html>
