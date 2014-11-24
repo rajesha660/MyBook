@@ -1,8 +1,8 @@
+/* hide the profile container */
 (function(){
 	var profile = document.getElementById("profile_container");
 	profile.hidden = true;
 })();
-
 
 /* do logout */
 function logout() {
@@ -27,4 +27,30 @@ function showProfile() {
 	
 	profile.hidden = false;
 	feed.hidden = true;
+}
+
+function createPost() {
+	
+	var post = document.getElementsByName("newpost")[0];
+	var value = post.value;
+	if(validatePost(value)){
+		
+		var n = value.search(/https|ftp|http/i);
+		if(n < 0) {
+			FeedService.createFeed(new TextFeed(value));
+		} else {
+			FeedService.createFeed(new URLFeed(value));
+		}
+	}
+	post.value = "";
+	setPost();
+}
+
+function validatePost(post) {
+	
+	if(post.length == 0) {
+		alert("post should not be empty");
+		return false;
+	}
+	return true;
 }

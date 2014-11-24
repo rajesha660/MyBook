@@ -7,7 +7,7 @@
 	<body>
 		<div>
 			<div id="header">
-				<h1 id="title">My Book</h1>
+				<span id="title">My Book</span>
 				<button id="signout_btn" onClick="logout()">Sign out</button>
 			</div>
 			<div id="container">
@@ -17,10 +17,15 @@
 				</div>
 				<div id="content">
 					<div id="feed_container">
-						feed
+						<div id="add_new_post">
+							<input name="newpost" type="text" placeholder="Text feed or URL feed"/> <button onClick="createPost()">Post</button></br>
+						</div>
+						<div id="post_list">
+							
+						</div>
 					</div>
 					<div id="profile_container">
-						<iframe src="profile.html"></iframe>
+						<iframe frameBorder="0" border width="100%" height="100%" src="profile.html"></iframe>
 					</div>
 				</div>
 			</div>
@@ -28,6 +33,7 @@
 				Talent improving exercise, OFS
 			</div>
 		</div>
+		<script src="../javascript/services.js"></script>
 		<script src="../javascript/feeds.js"></script>
 	</body>
 </html>
