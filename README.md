@@ -1,8 +1,8 @@
 -----------
 Credentials
 -----------
-username : rajesha.
-password : test123.
+username = rajesha.
+password = test123.
 
 
 ---------------------------------------------------------
