@@ -1,3 +1,5 @@
+"use strict";
+
 var FeedService = undefined;
 var Feed = undefined;
 var URLFeed = undefined;

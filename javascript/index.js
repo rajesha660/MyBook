@@ -1,3 +1,4 @@
+"use strict";
 
 /* Validate the login credentials */
 function validateLogin() {

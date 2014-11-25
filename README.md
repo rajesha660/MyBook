@@ -60,10 +60,10 @@ Profile
 Services
 ---------
 
-1. The data captured in UI should be stored in memory. No database required.
+1. The data captured in UI should be stored in memory. No database required. --Done
 Define a Feed array to store array of feed objects.
 
-2. FeedService should be introduced with 
+2. FeedService should be introduced with -- Done
     1. createFeed(Feed)
     2. deleteFeed(feedId)
    NOTE : Use Javascript Closure to define this service class. 

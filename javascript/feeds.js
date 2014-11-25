@@ -1,3 +1,5 @@
+"use strict";
+
 /* hide the profile container */
 (function(){
 	var profile = document.getElementById("profile_container");
