@@ -1,3 +1,10 @@
+-----------
+Credentials
+-----------
+username = rajesha
+password = test123
+
+
 ---------------------------------------------------------
 My Book - Exercise for JavaScript, HTML and basic CSS
 ---------------------------------------------------------
