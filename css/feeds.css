@@ -21,6 +21,12 @@
     padding:5px;
 }
 
+#menu button {
+	width: 100%;
+	height: 40px;
+	border: none;
+}
+
 #container {
 	width: 100%;
 }
@@ -49,7 +55,7 @@
 
 #post_list {
 	
-	width:85%;
+	width: 102%;
     float:left;
     padding:10px;
 	height:90%;
@@ -58,7 +64,13 @@
 
 #add_new_post input {
 	
-	width: 80%;
+	width: 90%;
+	height: 30px;
+}
+
+#add_new_post button {
+	width: 109px;
+	height: 30px;
 }
 
 .feed {
@@ -71,9 +83,10 @@
 .feed_time {
 	float: left;
 	margin-top: 32px;
+	margin-left: 18px;
 }
 .feed_text {
-	width: 350px;
+	width: 550px;
 	white-space: nowrap;
 	float: left;
 	margin: 15px;
@@ -89,4 +102,8 @@
 
 .feed img {
 	float: left;
+}
+
+.active {
+	background-color: #CEDCE3;
 }

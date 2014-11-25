@@ -81,7 +81,8 @@ ProfileService =  {
 	
 	profileStore : {},
 	
-	saveProfile : function(profile) {
-		this.profileStore = profile;
+	saveProfile : function(userid, profile) {
+		this.profileStore.profile = profile;
+		this.profileStore.userid = userid;
 	}
 };

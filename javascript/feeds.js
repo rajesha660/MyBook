@@ -1,8 +1,11 @@
-
+"use strict";
 
 /* hide the profile container */
 (function(){
+
 	var profile = document.getElementById("profile_container");
+	document.getElementById("feed_btn").className = "active";
+	document.getElementById("feed_btn");
 	profile.hidden = true;
 	setPost();
 })();
@@ -17,6 +20,8 @@ function showFeed() {
 	
 	var profile = document.getElementById("profile_container");
 	var feed = document.getElementById("feed_container");
+	document.getElementById("feed_btn").className = "active";
+	document.getElementById("profile_btn").className = "";
 	
 	profile.hidden = true;
 	feed.hidden = false;
@@ -27,6 +32,8 @@ function showProfile() {
 	
 	var profile = document.getElementById("profile_container");
 	var feed = document.getElementById("feed_container");
+	document.getElementById("feed_btn").className = "";
+	document.getElementById("profile_btn").className = "active";
 	
 	profile.hidden = false;
 	feed.hidden = true;

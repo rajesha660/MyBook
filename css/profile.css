@@ -1,7 +1,9 @@
 #right_column {
 	float: left;
+	margin-left: 10%;
 }
 
 #left_column {
 	float: left;
+	margin-left: 20%;
 }
