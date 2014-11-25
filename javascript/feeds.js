@@ -56,7 +56,11 @@ function setPost() {
 	var list = document.getElementById("post_list");
 	var fragment = document.createDocumentFragment();
 	var feeds = FeedService.feedStore;
+	var sOut = "";
 	for(var i = 0, length = feeds.length; i < length; i ++ ) {
+		
+		sOut +="<div>";
+		sOut +="<img>";
 		var element = document.createElement("div");
 		element.appendChild(document.createTextNode( feeds[i].getFeed() ));
 		fragment.appendChild(element);
