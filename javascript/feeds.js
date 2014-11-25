@@ -1,4 +1,4 @@
-"use strict";
+
 
 /* hide the profile container */
 (function(){
@@ -54,19 +54,27 @@ function createPost() {
 function setPost() {
 	
 	var list = document.getElementById("post_list");
-	var fragment = document.createDocumentFragment();
 	var feeds = FeedService.feedStore;
 	var sOut = "";
+	var feed;
 	for(var i = 0, length = feeds.length; i < length; i ++ ) {
 		
-		sOut +="<div>";
-		sOut +="<img>";
-		var element = document.createElement("div");
-		element.appendChild(document.createTextNode( feeds[i].getFeed() ));
-		fragment.appendChild(element);
+		feed = feeds[i];
+		sOut += '<div class="feed">';
+		sOut += 	'<img width="50" height="50" src="../images/thumbnail/empty-profile.png">';
+		sOut += 	'<span class="feed_text">';
+		sOut += 	feed instanceof URLFeed ? '<a href='+feeds[i].getFeed()+' target="_blank">'+ feed.getFeed() +'</a>': feed.getFeed();
+		sOut += 	'</span>';
+		sOut += 	'<span class="feed_time">';
+		sOut += 	feed.getDate();
+		sOut += 	'</span>';
+		sOut += 	'<button class="delete_feed" id='+feed.getId()+' onclick="deletePost(this.id)">';
+		sOut +=			'<img width="20" height="20" src="../images/thumbnail/close.png">';
+		sOut += 	'</button>';
+		sOut += '</div>';
 	}
 	list.innerHTML = "";
-	list.appendChild(fragment);
+	list.innerHTML = sOut;
 }
 
 /* validation to check whether the post is empty or not */
@@ -77,4 +85,10 @@ function validatePost(post) {
 		return false;
 	}
 	return true;
+}
+
+/* delete a particular post */
+function deletePost(id) {
+	FeedService.deleteFeed(id);
+	setPost();
 }

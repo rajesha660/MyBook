@@ -4,11 +4,21 @@ var FeedService = undefined;
 var Feed = undefined;
 var URLFeed = undefined;
 var ProfileService = undefined;
+var Profile = undefined;
 
 Feed = function(id, type, date) {
 	this._id = id;
 	this._type = type;
 	this._date = date;
+};
+
+Profile = function(name, age, phone, email, address, profileImage) {
+	this.name = name;
+	this.age = age;
+	this.phone = phone;
+	this.email = email;
+	this.address = address;
+	this.profileImage = profileImage;
 };
 
 Feed.prototype = {
@@ -18,6 +28,9 @@ Feed.prototype = {
 	},
 	getType: function() {
 		return this._type;
+	},
+	getDate: function() {
+		return this._date;
 	}
 };
 
@@ -54,9 +67,10 @@ FeedService = {
 	},
 	
 	deleteFeed: function(feedId) {
-		for(var i = 0; i < feedStore.length; i++) {
-			if(feedId === feedStore[i].getId()) {
-				feedStore.splice(i, 1);
+		
+		for(var i = 0, size = this.feedStore.length; i < size; i++) {
+			if(feedId === this.feedStore[i].getId()) {
+				this.feedStore.splice(i, 1);
 				break;
 			}
 		}
@@ -65,9 +79,9 @@ FeedService = {
 
 ProfileService =  {
 	
-	ProfileStore : [],
+	profileStore : {},
 	
 	saveProfile : function(profile) {
-		
+		this.profileStore = profile;
 	}
 };

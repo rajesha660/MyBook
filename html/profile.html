@@ -1,24 +1,16 @@
-<!DOCTYPE>
-<html>
-	<head>
-		<link href="../css/profile.css" rel="stylesheet"/>
-	</head>
-	<body>
-		<form>
-			<div>
-				<span id="left_column">
-					<input type="text" name="name" placeholder="Name"/>*</br></br>
-					<input type="text" name="age" placeholder="Age"/>*</br></br>
-					<input type="text" name="phone" placeholder="Phone"/>*</br></br>
-					<input type="text" name="email" placeholder="Email"/>*</br></br>
-					<textarea rows="4" cols="30" placeholder="Address"></textarea></br></br>
-					<input type="file"/></br></br>
-					<button type="submit">Save</button>
-				</span>
-				<span id="right_column">
-					<img id="profile_image" width="152" height="229">
-				</span>
-			</div>
-		</form>
-	</body>
-</html>
+<link href="../css/profile.css" rel="stylesheet"/>
+<script src="../javascript/profile.js"></script>
+<div>
+	<span id="left_column">
+		<input maxlength="50" type="text" name="name" placeholder="Name" onchange="enableSaveButton(this.value)"/>*</br></br>
+		<input type="text" name="age" placeholder="Age" onchange="enableSaveButton(this.value)"/>*</br></br>
+		<input type="text" name="phone" placeholder="Phone" onchange="enableSaveButton(this.value)"/>*</br></br>
+		<input type="text" name="email" placeholder="Email" onchange="enableSaveButton(this.value)"/>*</br></br>
+		<textarea name="address" rows="4" cols="30" placeholder="Address" ></textarea></br></br>
+		<input type="file" name="image"/></br></br>
+		<button id="save_btn" type="submit" onclick="createProfile()" disabled>Save</button>
+	</span>
+	<span id="right_column">
+		<img id="profile_image" width="152" height="229">
+	</span>
+</div>
