@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>My Book</title>
@@ -6,20 +6,20 @@
 	</head>
 	<body>
 		<div>
-			<div id="header">
-				<form name="login_form" action="html/feeds.html" onsubmit="return validateLogin()" method="post">
-					<span id="title_index">My Book</span>
+			<header>
+				<h1>My Book</h1>
+				<form id="login" name="login_form" action="html/feeds.html" onsubmit="return validateLogin()" method="post">
 					<input  name="username" maxlength="8" placeholder="User name"/>
 					<input  name="password" type="password" min="6" placeholder="Password"/>
 					<button type="submit">Sign in</button>
 				</form>
-			</div>
-			<div id="content">
-				<img id="index-bg" width="987" height="615" src="images/fullsize/index-bg.jpg"/>
-			</div>
-			<div id="footer">
-				<span>Talent improving exercise, OFS</span>
-			</div>
+			</header>
+			<section>
+					<img width="987" height="615" src="images/fullsize/index-bg.jpg"/>
+			</section>
+			<footer>
+				<h4>Talent improving exercise, OFS</h4>
+			</footer>
 		</div>
 		<script src="javascript/index.js"></script>
 	</body>

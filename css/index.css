@@ -1,29 +1,21 @@
-#index-bg {
-	position: "absolute";
-	width: 100%;
+section  img{
+	display: block;
+	margin: 0 auto 0 auto;
 }
 
-#title_index {
-	font-size: 40px;
-	font-weight: bold;
+section {
+	clear: both;
 }
 
-#header {
-	padding:5px;
+h1 {
+	float: left;
 }
 
-#content {
-	margin-left: auto;
-    margin-right: auto;
-	width: 70%;
-	padding: 5px;
+h4 {
+	text-align: center;
 }
 
-#footer {
-	padding:5px;
-	text-align:center;
-}
-
-#header , #footer {
-	background-color: #D3D3D3; 
+form {
+	float: right;
+	margin: 30px 10px 10px 0;
 }
