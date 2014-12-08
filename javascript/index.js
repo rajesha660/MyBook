@@ -1,20 +1,28 @@
+(function() {
+	
 "use strict";
+var app = angular.module('index', []);
 
 /* Validate the login credentials */
-function validateLogin() {
+app.controller('LoginController', function() {
 
 	var _username = "rajesha";
 	var _password = "test123";
-	var username = document.forms["login_form"]["username"].value;
-	var password = document.forms["login_form"]["password"].value;
-	//username = _username;
-	//password = _password;
 	
-	if(username.length == 0 || password.length == 0) {
-		alert("User name or password should not be empty");
-		return false;
-	} else if((username != _username) || (password != _password)) {
-		alert("Invalid username or password");
-		return false;
-	}
-}
+	this.validateLogin = function(data) {
+		
+		this.username = data.username;
+		this.password = data.password;
+		
+		if(this.username.length == 0 || this.password.length == 0) {
+			alert("User name or password should not be empty");
+			return false;
+		} else if((this.username != _username) || (this.password != _password)) {
+			alert("Invalid username or password");
+			return false;
+		} else {
+			document.location.href='html/feeds.html';
+		}
+	};
+});
+})();

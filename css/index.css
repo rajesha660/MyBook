@@ -1,3 +1,11 @@
+body {
+	margin: 0;
+}
+header::after {
+	content: '';
+	display: block;
+	clear:both;
+}
 section  img{
 	display: block;
 	margin: 0 auto 0 auto;
@@ -9,13 +17,38 @@ section {
 
 h1 {
 	float: left;
+	padding: 0 0 0 10px;
 }
 
 h4 {
 	text-align: center;
+	padding: 20px 0px 20px 0px;
+	margin: 0;
 }
 
 form {
 	float: right;
 	margin: 30px 10px 10px 0;
+}
+
+header , footer{
+	background: #829aa8;
+}
+section {
+	background: linear-gradient(to bottom right, #B0B0B0, #D0D0D0 );
+	border: 2px solid black;
+}
+
+input {
+
+	height: 26px;
+	border-radius: 10px;
+	border: 1px solid #000000;
+}
+
+button {
+	width: 100px;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid #000000;
 }

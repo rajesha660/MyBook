@@ -4,23 +4,23 @@
 		<title>My Book</title>
 		<link href="css/index.css" rel="stylesheet"/>
 	</head>
-	<body>
-		<div>
-			<header>
-				<h1>My Book</h1>
-				<form id="login" name="login_form" action="html/feeds.html" onsubmit="return validateLogin()" method="post">
-					<input  name="username" maxlength="8" placeholder="User name"/>
-					<input  name="password" type="password" min="6" placeholder="Password"/>
-					<button type="submit">Sign in</button>
-				</form>
-			</header>
-			<section>
-					<img width="987" height="615" src="images/fullsize/index-bg.jpg"/>
-			</section>
-			<footer>
-				<h4>Talent improving exercise, OFS</h4>
-			</footer>
-		</div>
+	<body ng-app="index" ng-controller="LoginController as loginCtrl">
+		<header>
+			<h1>My Book</h1>
+			<form id="login" name="login_form"
+					ng-submit="login_form.$valid && loginCtrl.validateLogin(data)" method="post">
+				<input  name="username" maxlength="8" placeholder="User name" ng-model="data.username" autofocus required/>
+				<input  name="password" type="password" min="6" placeholder="Password" ng-model="data.password" required/>
+				<button type="submit">Sign in</button>
+			</form>
+		</header>
+		<section>
+				<img width="987" height="615" src="images/fullsize/index-bg.jpg"/>
+		</section>
+		<footer>
+			<h4>Talent improving exercise, OFS</h4>
+		</footer>
+		<script src="lib/js/angular.min.js"></script>
 		<script src="javascript/index.js"></script>
 	</body>
 </html>
