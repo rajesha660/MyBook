@@ -69,15 +69,15 @@ function setPost() {
 		feed = feeds[i];
 		sOut += '<div class="feed">';
 		sOut += 	'<img width="50" height="50" src="../images/thumbnail/empty-profile.png">';
+		sOut += 	'<button class="delete_feed" id='+feed.getId()+' onclick="deletePost(this.id)">';
+		sOut +=			'<img width="20" height="20" src="../images/thumbnail/close.png">';
+		sOut += 	'</button>';
 		sOut += 	'<span class="feed_text">';
 		sOut += 	feed instanceof URLFeed ? '<a href='+feeds[i].getFeed()+' target="_blank">'+ feed.getFeed() +'</a>': feed.getFeed();
 		sOut += 	'</span>';
 		sOut += 	'<span class="feed_time">';
 		sOut += 	feed.getDate();
 		sOut += 	'</span>';
-		sOut += 	'<button class="delete_feed" id='+feed.getId()+' onclick="deletePost(this.id)">';
-		sOut +=			'<img width="20" height="20" src="../images/thumbnail/close.png">';
-		sOut += 	'</button>';
 		sOut += '</div>';
 	}
 	list.innerHTML = "";

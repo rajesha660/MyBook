@@ -73,3 +73,42 @@ h4 {
 	padding: 20px 0px 20px 0px;
 	margin: 0;
 }
+
+.feed::after {
+	content: '';
+	display: block;
+	clear:both;
+}
+
+.feed {
+	padding: 10px;
+	background-color: #F0F8FF;
+	margin: 10px;
+	/* height: 54px; */
+}
+
+.feed_time {
+	float: right;
+	/* margin-top: 32px; */
+	/* margin-left: 18px; */
+}
+.feed_text {
+	/* width: 550px; */
+	white-space: nowrap;
+	/* float: left; */
+	margin: 15px 0 0 0;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+}
+
+.delete_feed{
+	border: none;
+	background: none;
+	float: right;
+}
+
+.feed img {
+	float: left;
+	/* margin-right: 10px; */
+}
