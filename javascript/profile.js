@@ -3,12 +3,7 @@ var app = angular.module('profile', []);
 
 app.controller('ProfileController', function() {
 
-	this.profile  = {
-		name: '',
-		age: '',
-		phone: '',
-		email: ''
-	};
+	this.profile  = {};
 	
 	this.file = {};
 	this.disable_savebtn = {};
@@ -60,7 +55,8 @@ app.controller('ProfileController', function() {
 		var phone = this.profile.phone;
 		var email = this.profile.email;
 
-		if(username.length == 0 || age.length == 0 || phone.length == 0 || email.length == 0) {
+		if((username == undefined || age == undefined || phone == undefined || email == undefined)||
+		(username.length == 0 || age.length == 0 || phone.length == 0 || email.length == 0)) {
 			this.disable_savebtn = true;
 		} else {
 			this.disable_savebtn = false;

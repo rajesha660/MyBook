@@ -33,7 +33,7 @@
 								<a ng-if="feed.getType() === 'url'" href={{feed.getFeed()}} target="_blank">{{feed.getFeed()}}</a>
 								<span ng-if="feed.getType() === 'text'">{{feed.getFeed()}}</span>
 							</span>
-							<span class="feed_time">{{feed.getDate() | date:"mm/dd/yyyy h:mma"}}</span>
+							<span class="feed_time">{{feed.getDate() | date:"MM/dd/yyyy h:mma"}}</span>
 						</div>
 					</div>
 				</div>
