@@ -1,5 +1,10 @@
-body {
+html, body , section{
+	height: 100%;
+}
+
+body, * {
 	margin: 0;
+	box-sizing: border-box;
 }
 
 header::after {
@@ -11,7 +16,60 @@ header::after {
 header , footer{
 	background: #829aa8;
 }
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
 section {
 	background: linear-gradient(to bottom right, #B0B0B0, #D0D0D0 );
 	border: 2px solid black;
+}
+
+section nav {
+	float: left;
+	width: 15%;
+}
+
+section section {
+	float: left;
+	width: 85%;
+}
+
+header h1 {
+	float: left;
+	margin: 10px;
+}
+
+header button {
+	float: right;
+	margin: 20px;
+}
+
+#feed_btn, #profile_btn {
+	width: 100%;
+	height: 35px;
+}
+
+#add_new_post {
+	box-sizing: border-box;
+}
+
+#add_new_post input {
+	width: 90%;
+	height: 30px;
+}
+
+#add_new_post button {
+	width: 10%;
+	height: 30px;
+	float: right;
+}
+
+h4 {
+	text-align: center;
+	padding: 20px 0px 20px 0px;
+	margin: 0;
 }
