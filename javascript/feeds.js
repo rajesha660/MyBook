@@ -1,49 +1,17 @@
 "use strict";
-/* hide the profile container */
-(function(){
-
-	var profile = document.getElementById("profile_container");
-	document.getElementById("feed_btn").className = "active";
-	document.getElementById("feed_btn");
-	profile.hidden = true;
-})();
-
 var app = angular.module('feeds', []);
 
 app.controller('FeedController', function() {
 	
 	this.post = {};
 	this.feeds = FeedService.feedStore;
-	
-	/* hide the profile and show the feed */
-	this.showFeed = function() {
-		
-		var profile = document.getElementById("profile_container");
-		var feed = document.getElementById("feed_container");
-		document.getElementById("feed_btn").className = "active";
-		document.getElementById("profile_btn").className = "";
-
-		profile.hidden = true;
-		feed.hidden = false;
-	};
+	this.tab = 1;
 	
 	/* do logout */
 	this.logout = function() {
 		window.location.href = "../index.html"
 	};
 	
-	/* hide the feed and show the profile */
-	this.showProfile = function() {
-
-		var profile = document.getElementById("profile_container");
-		var feed = document.getElementById("feed_container");
-		document.getElementById("feed_btn").className = "";
-		document.getElementById("profile_btn").className = "active";
-		
-		profile.hidden = false;
-		feed.hidden = true;
-	};
-
 	/* create a new text or url feed post */
 	this.createPost = function() {
 
@@ -75,5 +43,10 @@ app.controller('FeedController', function() {
 	
 		FeedService.deleteFeed(id);
 	};
+	
+	/* set the current tab */
+	this.selectTab = function(num) {
+		this.tab = num;
+	}
 });
 

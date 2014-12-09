@@ -12,11 +12,11 @@
 		</header>
 		<section>
 			<nav>
-				<button id="feed_btn" ng-click="feedCtrl.showFeed()">Feed</button></br>
-				<button id="profile_btn" ng-click="feedCtrl.showProfile()">Profile</button></br>
+				<button id="feed_btn" ng-click="feedCtrl.selectTab(1)">Feed</button></br>
+				<button id="profile_btn" ng-click="feedCtrl.selectTab(2)">Profile</button></br>
 			</nav>
 			<div id="container">
-				<div id="feed_container">
+				<div id="feed_container" ng-show="feedCtrl.tab === 1">
 					<div id="add_new_post">
 						<input name="newpost" type="text" placeholder="Text feed or URL feed" ng-model="feedCtrl.post.message"/> 
 						<button ng-click="feedCtrl.createPost()">Post</button></br>
@@ -35,9 +35,8 @@
 						</div>
 					</div>
 				</div>
-				<div id="profile_container">
+				<div id="profile_container" ng-show="feedCtrl.tab === 2">
 					<iframe frameBorder="0" width=100% height=100% src="profile.html"></iframe>
-					<!--<div ng-include="profile2.url"></div> -->
 				</div>
 			</div>
 		</section>
