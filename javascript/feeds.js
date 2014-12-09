@@ -48,5 +48,9 @@ app.controller('FeedController', function() {
 	this.selectTab = function(num) {
 		this.tab = num;
 	}
+	
+	this.isSelectedTab = function(num) {
+		return this.tab === num;
+	}
 });
 

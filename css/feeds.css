@@ -126,3 +126,7 @@ h4 {
 	background: #ffffff;
 	height: 100%;
 }
+
+.active {
+	background: #F2E48C;
+}
