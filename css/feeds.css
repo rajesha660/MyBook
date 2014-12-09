@@ -121,3 +121,8 @@ h4 {
 #post_list {
 	overflow-y: scroll;
 }
+
+#profile_container {
+	background: #ffffff;
+	height: 100%;
+}

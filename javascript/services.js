@@ -57,7 +57,7 @@ FeedService = {
 	createFeed: function(feed) {
 	
 		feed._id = "MyPost"+this.feedStore.length;
-		feed._date = Date();
+		feed._date = Date.now();
 		if(feed instanceof URLFeed) {
 			feed._type = "url";
 		} else {

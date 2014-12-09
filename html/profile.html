@@ -4,23 +4,30 @@
 		<title>Profile</title>
 		<link href="../css/profile.css" rel="stylesheet"/>
 	</head>
-	<body>
+	<body ng-app="profile" ng-controller="ProfileController as profileCtrl">
 		<div>
-			<form method="post" onsubmit="return createProfile()">
+			<form method="post">
 				<span id="left_column">
-					<input maxlength="50" type="text" name="name" placeholder="Name" onkeydown="enableSaveButton()"/>*</br></br>
-					<input type="text" name="age" placeholder="Age" onkeydown="enableSaveButton()"/>*</br></br>
-					<input type="text" name="phone" placeholder="Phone" onkeydown="enableSaveButton()"/>*</br></br>
-					<input type="text" name="email" placeholder="Email" onkeydown="enableSaveButton()"/>*</br></br>
-					<textarea name="address" rows="4" cols="30" placeholder="Address" ></textarea></br></br>
-					<input type="file" onchange="showPreviewImage(this)" name="image"/></br></br>
-					<button id="save_btn" type="submit" disabled>Save</button>
+					<input maxlength="50" type="text" ng-change="profileCtrl.enableSaveButton()" 
+						ng-model="profileCtrl.profile.name" placeholder="Name" required/>*</br></br>
+					<input type="text" ng-change="profileCtrl.enableSaveButton()" ng-model="profileCtrl.profile.age" 
+						placeholder="Age" required/>*</br></br>
+					<input type="text" ng-model="profileCtrl.profile.phone" ng-change="profileCtrl.enableSaveButton()"
+						placeholder="Phone" required/>*</br></br>
+					<input type="text" ng-model="profileCtrl.profile.email" ng-change="profileCtrl.enableSaveButton()"
+						placeholder="Email" required/>*</br></br>
+					<textarea ng-model="profileCtrl.profile.address" rows="4" cols="30" 
+						placeholder="Address" ></textarea></br></br>
+					<input type="file" ng-change="profileCtrl.showPreviewImage(this)" 
+						name="image" ng-model="profileCtrl.file.value"/></br></br>
+					<button id="save_btn" ng-disabled="profileCtrl.disable_savebtn" type="submit" ng-click="profileCtrl.createProfile()" disabled>Save</button>
 				</span>
 				<span id="right_column">
 					<img id="profile_image" width="152" height="229">
 				</span>
 			</form>
 		</div>
+		<script src="../lib/js/angular.min.js"></script>
 		<script src="../javascript/services.js"></script>
 		<script src="../javascript/profile.js"></script>
 	</body>

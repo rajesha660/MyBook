@@ -1,0 +1,16 @@
+<div>
+	<form method="post" onsubmit="return createProfile()">
+		<span id="left_column">
+			<input maxlength="50" type="text" name="name" placeholder="Name" onkeydown="enableSaveButton()"/>*</br></br>
+			<input type="text" name="age" placeholder="Age" onkeydown="enableSaveButton()"/>*</br></br>
+			<input type="text" name="phone" placeholder="Phone" onkeydown="enableSaveButton()"/>*</br></br>
+			<input type="text" name="email" placeholder="Email" onkeydown="enableSaveButton()"/>*</br></br>
+			<textarea name="address" rows="4" cols="30" placeholder="Address" ></textarea></br></br>
+			<input type="file" onchange="showPreviewImage(this)" name="image"/></br></br>
+			<button id="save_btn" type="submit" disabled>Save</button>
+		</span>
+		<span id="right_column">
+			<img id="profile_image" width="152" height="229">
+		</span>
+	</form>
+</div>

@@ -3,13 +3,14 @@
 	<head>
 		<title>Feeds</title>
 		<link href="../css/feeds.css" rel="stylesheet"/>
+		<link href="../css/profile.css" rel="stylesheet"/>
 	</head>
-	<body ng-app="feeds">
+	<body ng-app="feeds" ng-controller="FeedController as feedCtrl">
 		<header>
 			<h1>My Book</h1>
-			<button id="signout_btn" onClick="logout()">Sign out</button>
+			<button id="signout_btn" ng-click="feedCtrl.logout()">Sign out</button>
 		</header>
-		<section ng-controller="FeedController as feedCtrl">
+		<section>
 			<nav>
 				<button id="feed_btn" ng-click="feedCtrl.showFeed()">Feed</button></br>
 				<button id="profile_btn" ng-click="feedCtrl.showProfile()">Profile</button></br>
@@ -23,19 +24,20 @@
 					<div id="post_list">
 						<div ng-repeat="feed in feedCtrl.feeds" class="feed">
 							<img width="50" height="50" src="../images/thumbnail/empty-profile.png">
-							<button class="delete_feed" id={{feed.getId()}} ng-click="feedCtrl.deletePost()">
+							<button class="delete_feed" ng-click="feedCtrl.deletePost(feed.getId())">
 								<img width="20" height="20" src="../images/thumbnail/close.png">
 							</button>
 							<span class="feed_text">
 								<a ng-if="feed.getType() === 'url'" href={{feed.getFeed()}} target="_blank">{{feed.getFeed()}}</a>
 								<span ng-if="feed.getType() === 'text'">{{feed.getFeed()}}</span>
 							</span>
-							<span class="feed_time">{{feed.getDate()}}</span>
+							<span class="feed_time">{{feed.getDate() | date:"mm/dd/yyyy h:mma"}}</span>
 						</div>
 					</div>
 				</div>
 				<div id="profile_container">
-					<iframe frameBorder="0" src="profile.html"></iframe>
+					<iframe frameBorder="0" width=100% height=100% src="profile.html"></iframe>
+					<!--<div ng-include="profile2.url"></div> -->
 				</div>
 			</div>
 		</section>
@@ -45,5 +47,6 @@
 		<script src="../lib/js/angular.min.js"></script>
 		<script src="../javascript/services.js"></script>
 		<script src="../javascript/feeds.js"></script>
+		<script src="../javascript/profile.js"></script>
 	</body>
 </html>

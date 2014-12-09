@@ -71,10 +71,9 @@ app.controller('FeedController', function() {
 	};
 
 	/* delete a particular post */
-	this.deletePost = function() {
+	this.deletePost = function(id) {
 	
-		alert("delete");
-		// FeedService.deleteFeed(id);
+		FeedService.deleteFeed(id);
 	};
 });
 
