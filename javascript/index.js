@@ -1,5 +1,3 @@
-(function() {
-	
 "use strict";
 var app = angular.module('index', []);
 
@@ -25,4 +23,3 @@ app.controller('LoginController', function() {
 		}
 	};
 });
-})();

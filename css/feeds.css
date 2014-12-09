@@ -1,4 +1,4 @@
-html, body , section{
+html, body {
 	height: 100%;
 }
 
@@ -15,6 +15,7 @@ header::after {
 
 header , footer{
 	background: #829aa8;
+	height: 10%
 }
 
 footer {
@@ -26,16 +27,20 @@ footer {
 section {
 	background: linear-gradient(to bottom right, #B0B0B0, #D0D0D0 );
 	border: 2px solid black;
+	height: 80%;
 }
 
 section nav {
 	float: left;
 	width: 15%;
+	height: 100%;
+	border-right: 1px solid #000000;
 }
 
-section section {
+#container{
 	float: left;
 	width: 85%;
+	height: 100%;
 }
 
 header h1 {
@@ -110,5 +115,9 @@ h4 {
 
 .feed img {
 	float: left;
-	/* margin-right: 10px; */
+	margin-right: 10px;
+}
+
+#post_list {
+	overflow-y: scroll;
 }

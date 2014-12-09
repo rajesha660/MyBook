@@ -4,34 +4,45 @@
 		<title>Feeds</title>
 		<link href="../css/feeds.css" rel="stylesheet"/>
 	</head>
-	<body>
+	<body ng-app="feeds">
 		<header>
 			<h1>My Book</h1>
 			<button id="signout_btn" onClick="logout()">Sign out</button>
 		</header>
-		<section>
+		<section ng-controller="FeedController as feedCtrl">
 			<nav>
-				<button id="feed_btn" onClick="showFeed()">Feed</button></br>
-				<button id="profile_btn" onClick="showProfile()">Profile</button></br>
+				<button id="feed_btn" ng-click="feedCtrl.showFeed()">Feed</button></br>
+				<button id="profile_btn" ng-click="feedCtrl.showProfile()">Profile</button></br>
 			</nav>
-			<section>
+			<div id="container">
 				<div id="feed_container">
 					<div id="add_new_post">
-						<input name="newpost" type="text" placeholder="Text feed or URL feed"/> <button onClick="createPost()">Post</button></br>
+						<input name="newpost" type="text" placeholder="Text feed or URL feed" ng-model="feedCtrl.post.message"/> 
+						<button ng-click="feedCtrl.createPost()">Post</button></br>
 					</div>
 					<div id="post_list">
-						
+						<div ng-repeat="feed in feedCtrl.feeds" class="feed">
+							<img width="50" height="50" src="../images/thumbnail/empty-profile.png">
+							<button class="delete_feed" id={{feed.getId()}} ng-click="feedCtrl.deletePost()">
+								<img width="20" height="20" src="../images/thumbnail/close.png">
+							</button>
+							<span class="feed_text">
+								<a ng-if="feed.getType() === 'url'" href={{feed.getFeed()}} target="_blank">{{feed.getFeed()}}</a>
+								<span ng-if="feed.getType() === 'text'">{{feed.getFeed()}}</span>
+							</span>
+							<span class="feed_time">{{feed.getDate()}}</span>
+						</div>
 					</div>
 				</div>
 				<div id="profile_container">
-					<iframe frameBorder="0" border width="100%" height="100%" src="profile.html"></iframe>
+					<iframe frameBorder="0" src="profile.html"></iframe>
 				</div>
-			</section>
+			</div>
 		</section>
 		<footer>
 			<h4>Talent improving exercise, OFS</h4>
 		</footer>		
-		<script src="lib/js/angular.min.js"></script>
+		<script src="../lib/js/angular.min.js"></script>
 		<script src="../javascript/services.js"></script>
 		<script src="../javascript/feeds.js"></script>
 	</body>
