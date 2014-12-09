@@ -1,109 +1,17 @@
-#header {
-    padding:5px;
+body {
+	margin: 0;
 }
 
-#title{
-	font-size: 40px;
-	font-weight: bold;
-}
-
-#header button {
-	margin: 10px;
-	float: right;
-}
-
-#menu {
-	line-height:30px;
-    background-color:#eeeeee;
-    height:80%;
-    width:10%;
-    float:left;
-    padding:5px;
-}
-
-#menu button {
-	width: 100%;
-	height: 40px;
-	border: none;
-}
-
-#container {
-	width: 100%;
-}
-
-#content {
-	width:85%;
-    float:left;
-    padding:10px;
-	height:80%;
-}
-
-#footer {
+header::after {
+	content: '';
+	display: block;
 	clear:both;
-	padding:5px;
-	text-align:center;
 }
 
-#header , #footer {
-	background-color: #D3D3D3; 
+header , footer{
+	background: #829aa8;
 }
-
-#feed_container iframe {
-	width: 100%;
-	height: 100%;
-}
-
-#post_list {
-	
-	width: 102%;
-    float:left;
-    padding:10px;
-	height:90%;
-	overflow-y: scroll;
-}
-
-#add_new_post input {
-	
-	width: 90%;
-	height: 30px;
-}
-
-#add_new_post button {
-	width: 109px;
-	height: 30px;
-}
-
-.feed {
-	padding: 10px;
-	background-color: #F0F8FF;
-	margin: 10px;
-	height: 54px;
-}
-
-.feed_time {
-	float: left;
-	margin-top: 32px;
-	margin-left: 18px;
-}
-.feed_text {
-	width: 550px;
-	white-space: nowrap;
-	float: left;
-	margin: 15px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.delete_feed{
-	border: none;
-	background: none;
-	float: right;
-}
-
-.feed img {
-	float: left;
-}
-
-.active {
-	background-color: #CEDCE3;
+section {
+	background: linear-gradient(to bottom right, #B0B0B0, #D0D0D0 );
+	border: 2px solid black;
 }

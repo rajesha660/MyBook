@@ -1,38 +1,37 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Feeds</title>
 		<link href="../css/feeds.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<div>
-			<div id="header">
-				<span id="title">My Book</span>
-				<button id="signout_btn" onClick="logout()">Sign out</button>
-			</div>
-			<div id="container">
-				<div id="menu">
-					<button id="feed_btn" onClick="showFeed()">Feed</button></br>
-					<button id="profile_btn" onClick="showProfile()">Profile</button></br>
-				</div>
-				<div id="content">
-					<div id="feed_container">
-						<div id="add_new_post">
-							<input name="newpost" type="text" placeholder="Text feed or URL feed"/> <button onClick="createPost()">Post</button></br>
-						</div>
-						<div id="post_list">
-							
-						</div>
+		<header>
+			<span id="title">My Book</span>
+			<button id="signout_btn" onClick="logout()">Sign out</button>
+		</header>
+		<section>
+			<nav>
+				<button id="feed_btn" onClick="showFeed()">Feed</button></br>
+				<button id="profile_btn" onClick="showProfile()">Profile</button></br>
+			</nav>
+			<section>
+				<div id="feed_container">
+					<div id="add_new_post">
+						<input name="newpost" type="text" placeholder="Text feed or URL feed"/> <button onClick="createPost()">Post</button></br>
 					</div>
-					<div id="profile_container">
-						<iframe frameBorder="0" border width="100%" height="100%" src="profile.html"></iframe>
+					<div id="post_list">
+						
 					</div>
 				</div>
-			</div>
-			<div id="footer">
-				Talent improving exercise, OFS
-			</div>
-		</div>
+				<div id="profile_container">
+					<iframe frameBorder="0" border width="100%" height="100%" src="profile.html"></iframe>
+				</div>
+			</section>
+		</section>
+		<footer>
+			Talent improving exercise, OFS
+		</footer>		
+		<script src="lib/js/angular.min.js"></script>
 		<script src="../javascript/services.js"></script>
 		<script src="../javascript/feeds.js"></script>
 	</body>
