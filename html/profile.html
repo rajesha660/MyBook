@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Profile</title>
 		<link href="../css/profile.css" rel="stylesheet"/>
 	</head>
@@ -18,12 +19,12 @@
 						placeholder="Email" required/>*</br></br>
 					<textarea ng-model="profileCtrl.profile.address" rows="4" cols="30" 
 						placeholder="Address" ></textarea></br></br>
-					<input type="file" ng-change="profileCtrl.showPreviewImage(this)" 
-						name="image" ng-model="profileCtrl.file.value"/></br></br>
+					<input type="file" onchange="angular.element(this).scope().profileCtrl.showPreviewImage(this)" 
+							name="image"/></br></br>
 					<button id="save_btn" ng-disabled="profileCtrl.disable_savebtn" type="submit" ng-click="profileCtrl.createProfile()" disabled>Save</button>
 				</span>
 				<span id="right_column">
-					<img id="profile_image" width="152" height="229">
+					<img id="profile_image" width="152" height="229" alt="image preview">
 				</span>
 			</form>
 		</div>

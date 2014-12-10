@@ -16,10 +16,9 @@ app.controller('ProfileController',['ProfileService', function(ProfileService) {
 		var phone = this.profile.phone;
 		var email = this.profile.email;
 		var address = this.profile.address;
-		var profileImage = document.getElementsByName("image")[0].value;
 		
 		if(this.validateProfile(username, age, phone, email)) {
-			ProfileService.saveProfile("rajesha", username, age, phone, email, address, profileImage);
+			ProfileService.saveProfile("rajesha", username, age, phone, email, address);
 			alert("Your profile saved successfully");
 		}
 	};
@@ -65,7 +64,6 @@ app.controller('ProfileController',['ProfileService', function(ProfileService) {
 
 	this.showPreviewImage = function(obj) {
 		
-		var temp = this.file.value;
 		var reader  = new FileReader();
 		var file    = obj.files[0];
 		

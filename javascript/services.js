@@ -83,18 +83,17 @@ app.factory('ProfileService', function() {
 	var Profile = undefined;
 	var profileStore = {};
 	
-	Profile = function(name, age, phone, email, address, profileImage) {
+	Profile = function(name, age, phone, email, address) {
 		this.name = name;
 		this.age = age;
 		this.phone = phone;
 		this.email = email;
 		this.address = address;
-		this.profileImage = profileImage;
 	};
 	
-	var saveProfile = function(userid, username, age, phone, email, address, profileImage) {
+	var saveProfile = function(userid, username, age, phone, email, address) {
 	
-		var profile = new Profile(username, age, phone, email, address, profileImage);
+		var profile = new Profile(username, age, phone, email, address);
 		profileStore.profile = profile;
 		profileStore.userid = userid;
 	};
