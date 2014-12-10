@@ -65,14 +65,9 @@ app.factory('FeedService', function() {
 		feedStore.unshift(feed);
 	};
 	
-	var deleteFeed = function(feedId) {
+	var deleteFeed = function(index) {
 		
-		for(var i = 0, size = feedStore.length; i < size; i++) {
-			if(feedId === feedStore[i].getId()) {
-				feedStore.splice(i, 1);
-				break;
-			}
-		}
+		feedStore.splice(index, 1);
 	};
 	
 	return {

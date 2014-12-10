@@ -24,9 +24,9 @@
 						<button ng-click="feedCtrl.createPost()">Post</button></br>
 					</div>
 					<div id="post_list">
-						<div ng-repeat="feed in feedCtrl.feeds" class="feed">
+						<div ng-repeat="feed in feedCtrl.feeds track by $index" class="feed">
 							<img width="50" height="50" src="../images/thumbnail/empty-profile.png">
-							<button class="delete_feed" ng-click="feedCtrl.deletePost(feed.getId())">
+							<button class="delete_feed" ng-click="feedCtrl.deletePost($index)">
 								<img width="20" height="20" src="../images/thumbnail/close.png">
 							</button>
 							<span class="feed_text">
