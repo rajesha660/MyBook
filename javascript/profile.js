@@ -1,7 +1,7 @@
 "use strict";
-var app = angular.module('profile', []);
+var app = angular.module('profile', ['services']);
 
-app.controller('ProfileController', function() {
+app.controller('ProfileController',['ProfileService', function(ProfileService) {
 
 	this.profile  = {};
 	
@@ -19,7 +19,7 @@ app.controller('ProfileController', function() {
 		var profileImage = document.getElementsByName("image")[0].value;
 		
 		if(this.validateProfile(username, age, phone, email)) {
-			ProfileService.saveProfile("rajesha", new Profile(username, age, phone, email, address, profileImage));
+			ProfileService.saveProfile("rajesha", username, age, phone, email, address, profileImage);
 			alert("Your profile saved successfully");
 		}
 	};
@@ -79,5 +79,5 @@ app.controller('ProfileController', function() {
 			preview.src = "";
 		}
 	};
-});
+}]);
 

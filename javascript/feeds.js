@@ -1,7 +1,7 @@
 "use strict";
-var app = angular.module('feeds', []);
+var app = angular.module('feeds', ['services']);
 
-app.controller('FeedController', function() {
+app.controller('FeedController',['FeedService', function(FeedService) {
 	
 	this.post = {};
 	this.feeds = FeedService.feedStore;
@@ -17,13 +17,7 @@ app.controller('FeedController', function() {
 
 		var value = this.post.message;
 		if(this.validatePost(value)){
-			
-			var n = value.search(/https|ftp|http/i);
-			if(n < 0) {
-				FeedService.createFeed(new TextFeed(value));
-			} else {
-				FeedService.createFeed(new URLFeed(value));
-			}
+			FeedService.createFeed(value);
 		}
 		this.post.message = "";
 	};
@@ -52,5 +46,5 @@ app.controller('FeedController', function() {
 	this.isSelectedTab = function(num) {
 		return this.tab === num;
 	}
-});
+}]);
 
