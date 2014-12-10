@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Feeds</title>
 		<link href="../css/feeds.css" rel="stylesheet"/>
 		<link href="../css/profile.css" rel="stylesheet"/>
@@ -25,9 +26,9 @@
 					</div>
 					<div id="post_list">
 						<div ng-repeat="feed in feedCtrl.feeds track by $index" class="feed">
-							<img width="50" height="50" src="../images/thumbnail/empty-profile.png">
+							<img width="50" height="50" src="../images/thumbnail/empty-profile.png" alt="empty profile image">
 							<button class="delete_feed" ng-click="feedCtrl.deletePost($index)">
-								<img width="20" height="20" src="../images/thumbnail/close.png">
+								<img width="20" height="20" src="../images/thumbnail/close.png" alt="cross image for close button">
 							</button>
 							<span class="feed_text">
 								<a ng-if="feed.getType() === 'url'" href={{feed.getFeed()}} target="_blank">{{feed.getFeed()}}</a>
